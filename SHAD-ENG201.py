@@ -1,3 +1,10 @@
+######################################
+#       LIBRARY PREREQUISITES        #
+######################################
+#  python3 -m init --no-interaction  #
+#  python3 -m poetry add rich        #
+######################################
+
 import rich
 from rich.console import Console
 
