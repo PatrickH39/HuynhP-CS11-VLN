@@ -27,15 +27,14 @@ public class IntegerSetTests {
 
     @Test
     public void testInsertAlreadyThere() {
-        // insert number
         testSet.insert(3);
 
         // Checks if number is already in the set.
         assertEquals(testSet.size(), 1);
         assertTrue(testSet.contains(3));
 
-        // Removes a number.
-        testSet.remove(3);
+        // Inserts a number in set.
+        testSet.insert(3);
 
         // Checks if number is not in the set.
         assertEquals(testSet.size(), 0);
