@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="433.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <VBox fx:id="pageWelcome" alignment="CENTER" prefHeight="433.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="0.0" prefWidth="600.0" text="Welcome to the Game">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textGetName" alignment="CENTER" prefHeight="50.0" prefWidth="365.0" promptText="Enter a nickname">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="130.0" right="130.0" top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSubmitName" defaultButton="true" mnemonicParsing="false" onAction="#submitName" prefHeight="50.0" prefWidth="365.0" text="Submit">
+               <VBox.margin>
+                  <Insets left="130.0" right="130.0" top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane fx:id="pageGame" prefHeight="433.0" prefWidth="600.0" visible="false">
+         <children>
+            <HBox fx:id="hboxBal" alignment="CENTER_RIGHT" layoutX="11.0" layoutY="17.0" prefHeight="58.0" prefWidth="588.0">
+               <children>
+                  <Label fx:id="lblNickname" prefHeight="58.0" prefWidth="246.0" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="86.0" text="Balance: ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBal" prefHeight="58.0" prefWidth="97.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="70.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox layoutY="113.0" prefHeight="50.0" prefWidth="605.0">
+               <children>
+                  <Label fx:id="question" alignment="CENTER" prefHeight="77.0" prefWidth="602.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox fx:id="hboxPlayerBet" alignment="CENTER" layoutY="157.0" prefHeight="75.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="textGetBetAmt" alignment="CENTER" prefHeight="47.0" prefWidth="186.0" promptText="Amount to Bet">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnBetYes" mnemonicParsing="false" onAction="#betYes" prefHeight="47.0" prefWidth="59.0" text="✔">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnBetNo" mnemonicParsing="false" onAction="#betNo" prefHeight="47.0" prefWidth="58.0" text="✘">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnBetEqual" mnemonicParsing="false" onAction="#betEqual" prefHeight="47.0" prefWidth="58.0" text="=" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox fx:id="vboxRolls" layoutX="103.0" layoutY="241.0" prefHeight="124.0" prefWidth="126.0">
+               <children>
+                  <GridPane prefHeight="122.0" prefWidth="124.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="59.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="45.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="59.0" prefWidth="170.0" text="Roll 1: ">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="70.0" prefWidth="170.0" text="Roll 2: " GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="86.0" prefWidth="170.0" text="Roll 3: " GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbRoll1" prefHeight="66.0" prefWidth="66.0" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbRoll2" prefHeight="66.0" prefWidth="66.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbRoll3" prefHeight="50.0" prefWidth="56.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxResults" layoutX="325.0" layoutY="244.0" prefHeight="131.0" prefWidth="172.0">
+               <children>
+                  <Label fx:id="lblStatus" alignment="CENTER" prefHeight="41.0" prefWidth="173.0" text="You Win!">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblRollTotal" alignment="CENTER" prefHeight="37.0" prefWidth="171.0" text="Total Roll Amount:" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnNextGame" defaultButton="true" mnemonicParsing="false" onAction="#nextGame" prefHeight="37.0" prefWidth="169.0" text="Next Game">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
