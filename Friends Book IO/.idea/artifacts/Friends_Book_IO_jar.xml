@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Friends Book IO:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Friends_Book_IO_jar</output-path>
+    <root id="archive" name="Friends Book IO.jar">
+      <element id="module-output" name="Friends Book IO" />
+    </root>
+  </artifact>
+</component>

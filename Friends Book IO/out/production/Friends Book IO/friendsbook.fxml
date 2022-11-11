@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <HBox alignment="CENTER" prefHeight="90.0" prefWidth="900.0">
+      <ToolBar prefHeight="31.0" prefWidth="900.0">
+        <items>
+          <Button fx:id="btnLoad" mnemonicParsing="false" onAction="#loadList" prefHeight="25.0" prefWidth="67.0" text="Load">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/load.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveList" prefHeight="25.0" prefWidth="60.0" text="Save">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/save.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="29.0" top="10.0" />
+         </padding>
+      </ToolBar>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="900.0">
          <children>
             <TextField fx:id="getFirstName" prefHeight="43.0" prefWidth="175.0" promptText="First Name">
                <HBox.margin>
@@ -31,7 +76,7 @@
             </Button>
          </children>
       </HBox>
-      <SplitPane dividerPositions="0.32962138084632514" prefWidth="900.0">
+      <SplitPane dividerPositions="0.32962138084632514" prefHeight="557.0" prefWidth="900.0">
          <items>
             <ListView fx:id="listFriends" onMouseClicked="#showFriend" prefHeight="539.0" prefWidth="434.0" />
             <VBox fx:id="vboxFriendInfo" alignment="CENTER_LEFT" prefHeight="467.0" prefWidth="599.0" visible="false">
@@ -102,9 +147,9 @@
                               </GridPane>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER_RIGHT" layoutY="337.0" prefHeight="72.0" prefWidth="587.0" AnchorPane.rightAnchor="13.0">
+                        <VBox alignment="CENTER_RIGHT" layoutY="383.0" prefHeight="45.0" prefWidth="587.0" AnchorPane.rightAnchor="13.0">
                            <children>
-                            <Button fx:id="btnDeleteFriend" alignment="CENTER" mnemonicParsing="false" onAction="#deleteFriend" prefHeight="44.0" prefWidth="135.0" text=" DELETE" textAlignment="RIGHT">
+                            <Button fx:id="btnDeleteFriend" alignment="CENTER" mnemonicParsing="false" onAction="#deleteFriend" prefHeight="47.0" prefWidth="135.0" text=" DELETE" textAlignment="RIGHT">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -117,7 +162,7 @@
                                  <graphic>
                                     <ImageView fitHeight="18.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@delete.png" />
+                                          <Image url="@/delete.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>

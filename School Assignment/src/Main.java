@@ -70,7 +70,7 @@ public class Main {
         System.out.println("\033[1;31m" + "REMOVED " + "\033[0;0m" + "TWO STUDENTS");
         System.out.println("--------------------------------------------------\n");
 
-        System.out.println(getStudents());
+        System.out.println(school.getStudents());
         school.getInfo();
 
     }
