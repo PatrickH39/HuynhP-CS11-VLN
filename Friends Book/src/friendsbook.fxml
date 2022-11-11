@@ -50,7 +50,7 @@
       <SplitPane dividerPositions="0.32962138084632514" prefWidth="900.0">
          <items>
             <ListView fx:id="listFriends" onMouseClicked="#showFriend" prefHeight="539.0" prefWidth="434.0" />
-            <VBox fx:id="vboxFriendInfo" alignment="CENTER_LEFT" prefHeight="467.0" prefWidth="599.0">
+            <VBox fx:id="vboxFriendInfo" alignment="CENTER_LEFT" prefHeight="467.0" prefWidth="599.0" visible="false">
                <children>
                   <Label fx:id="lblFullName" prefHeight="64.0" prefWidth="479.0" text="insert name here">
                      <font>
