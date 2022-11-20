@@ -1,8 +1,11 @@
+import javafx.stage.FileChooser;
+
 import java.io.*;
 import java.util.ArrayList;
 
 class IOHandler {
     private static final ArrayList<Friend> allFriends = new ArrayList<>();
+    static final FileChooser fc = new FileChooser();
 
     /**
      * Reads data
@@ -15,7 +18,19 @@ class IOHandler {
         allFriends.clear(); // Reset Friends
 
         try {
-            FileReader fRead = new FileReader("data.txt");
+            // Opens a FileChooser window
+            fc.setTitle("Open a file");
+            File openFile = fc.showOpenDialog(null);
+
+            // Limits to text files only
+            fc.getExtensionFilters().clear();
+            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+
+            // Saves path to String path
+            String path = openFile.getAbsolutePath();
+
+            FileReader fRead = new FileReader(path);
             BufferedReader bRead = new BufferedReader(fRead);
 
             String line;
@@ -25,6 +40,7 @@ class IOHandler {
 
                 allFriends.add(new Friend(data[0], data[1], data[2], data[3]));
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,7 +55,18 @@ class IOHandler {
      */
     static void writeOut() {
         try {
-            FileWriter fWrite = new FileWriter("data.txt", false);
+            // Opens a FileChooser window
+            fc.setTitle("Save a file");
+            File saveFile = fc.showSaveDialog(null);
+
+            // Limits to text files only
+            fc.getExtensionFilters().clear();
+            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+
+            // Saves path to String path
+            String path = saveFile.getAbsolutePath();
+
+            FileWriter fWrite = new FileWriter(path, false);
             BufferedWriter bWrite = new BufferedWriter(fWrite);
 
             for (Friend f : allFriends) bWrite.write(f.toTSV() + "\n");
